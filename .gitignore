@@ -1,0 +1,3 @@
+# Packaged release archive - built locally on demand by release.ps1 (run
+# from the sibling -dev source repo), never committed here.
+*.tgz
