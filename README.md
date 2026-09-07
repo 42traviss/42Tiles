@@ -10,15 +10,15 @@ Source (not required to install): [42Tiles-dev](https://github.com/42piotrnycz/4
 
 ## Features
 
-- **Auto-Assign** — fill a native 47-tile (blob) or 16-tile (cardinal) set from one start tile. Wrap width and **Skip first** sit under Auto Tile Templates. Wrap and Skip first are remembered per tileset.
-- **Groups & Rules** — one window: **Rules** on the left, **Groups** on the right. Opens floating, or docked as a workspace tab (Preferences).
-- **Tileset groups** — named bags of *any* tileset tiles. Left-click add/remove, Shift+click a range, right-click priority 1 / 2 / 3. Copy, Paste, and Copy to… move groups between tilesets.
-- **Overload rules** — paint like GameMaker’s 47 or 16 autotile (from the set’s tile count). A slot can use a random tile from a group instead of the set tile.
-- **Room paint** — **Auto Tile with Rules** next to native Auto Tile. Same brush size as the Tiles panel, with a hover preview. Native Auto Tile is unchanged.
-- **Library badges** — red **R** on autotile sets that have rules; green **G** on tilesets (and their sets) that have groups. Same badges in the room Auto Tile Library.
-- **Saved with the tileset** — groups, rules, wrap, Skip first, and Hide empty live in `Name.yyplugin` next to the tileset `.yy`. The native `.yy` is not edited.
-- **Preferences** — **File → Preferences → 42Tiles** or **Plugins → 42Tiles**. Per-project defaults in `Name.yyplugin` next to the `.yyp`. Enable does not need an IDE restart.
-- **Runtime groups** — generated script `__42Tiles` with `tile_group_get_all`, `tile_group_get_names`, and `tile_group_get`.
+- **Auto-Assign** - fill a native 47-tile (blob) or 16-tile (cardinal) set from one start tile. Wrap width and **Skip first** sit under Auto Tile Templates. Wrap and Skip first are remembered per tileset.
+- **Groups & Rules** - one window: **Rules** on the left, **Groups** on the right. Opens floating, or docked as a workspace tab (Preferences).
+- **Tileset groups** - named bags of *any* tileset tiles. Left-click add/remove, Shift+click a range, right-click priority 1 / 2 / 3. Copy, Paste, and Copy to… move groups between tilesets.
+- **Overload rules** - paint like GameMaker’s 47 or 16 autotile (from the set’s tile count). A slot can use a random tile from a group instead of the set tile.
+- **Room paint** - **Auto Tile with Rules** next to native Auto Tile. Same brush size as the Tiles panel, with a hover preview. Native Auto Tile is unchanged.
+- **Library badges** - red **R** on autotile sets that have rules; green **G** on tilesets (and their sets) that have groups. Same badges in the room Auto Tile Library.
+- **Saved with the tileset** - groups, rules, wrap, Skip first, and Hide empty live in `Name.yyplugin` next to the tileset `.yy`. The native `.yy` is not edited.
+- **Preferences** - **File → Preferences → 42Tiles** or **Plugins → 42Tiles**. Per-project defaults in `Name.yyplugin` next to the `.yyp`. Enable does not need an IDE restart.
+- **Runtime groups** - generated script `__42Tiles` with `tile_group_get_all`, `tile_group_get_names`, and `tile_group_get`.
 
 ## How to use
 
@@ -61,7 +61,7 @@ A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No grou
 
 1. Open a room, select a tile layer, and pick an autotile set that has rules (red **R**). Tilesets with groups show a green **G**.
 
-<img width="407" height="453" alt="Red R badge on an autotile set with rules" src="https://github.com/user-attachments/assets/c9734580-be87-4c28-a0c5-2cf335ec7b49" />
+<img width="315" height="245" alt="obraz" src="https://github.com/user-attachments/assets/eaad783b-58ca-45bb-96cd-4ca8cd770675" />
 
 2. Click **Auto Tile with Rules** in the tile tools (next to native Auto Tile). Choosing a native tool exits Rules.
 
@@ -73,15 +73,16 @@ A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No grou
 
 ### Groups in GML
 
-42Tiles adds (and rewrites) a script named `__42Tiles`. Do not edit it. After you change groups, save the project or keep the Groups window open; the script updates automatically.
+42Tiles adds (and writes to) a script named `__42Tiles`. 
+Do not edit it. After you change groups, save the project or keep the Groups window open; the script updates automatically.
 
 ```gml
 var _all = tile_group_get_all(ts_ground);
 // _all[$ "grass"].tiles / .priorities
 var _names = tile_group_get_names(ts_ground);
 var _group = tile_group_get(ts_ground, "grass");
-// _group.tiles        — tile indices in the group
-// _group.priorities   — 1 often / 2 medium / 3 rare, parallel to tiles
+// _group.tiles        - tile indices in the group
+// _group.priorities   - 1 often / 2 medium / 3 rare, parallel to tiles
 ```
 
 Missing tileset or group name returns `{}` / `[]` / `undefined`.
