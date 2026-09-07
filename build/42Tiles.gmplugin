@@ -1,0 +1,29 @@
+{
+  "name": "42Tiles",
+  "bundle_version": "0.2.0",
+  "bundle_description": "Fill 47- or 16-tile autotile sets from one click, then paint with per-slot tile groups.",
+  "required": false,
+  "feature_flag": null,
+  "plugins": [
+    {
+      "plugin_name": "42Tiles",
+      "localised_name": "42Tiles",
+      "plugin_version": "0.2.0",
+      "type": "System",
+      "plugin_data": null,
+      "description": "Fill 47- or 16-tile autotile sets from one click, then paint with per-slot tile groups.",
+      "required_assemblies": [
+        {
+          "assembly_name": "42Tiles",
+          "version": "0.2.0",
+          "path": "42Tiles.dll",
+          "checksum": "rFABCnqKGUm2/D8NPByJQfbZcHm4WsjHOe\u002BsF3LPM8U="
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "author": "traviss42",
+  "signature": "Nnxctf6Z\u002BidljHk3J3x7gG/OYcSaGvWK/dp7\u002B4L5ac2ivBVyeamfw9U9gxvLBOGrjgxlYIi/8ZOCNlYLBo24wdLds8q69fXHRObNXwrBYvEwMTZCV\u002BoflDsA2vtpxCNQHPn82jYilb\u002Bw/2RwT\u002BPl9SDST4K5A0l3uRRmnsR57F9MNvxN0ybSY2y62siXePAm\u002B9ep7SHAyn8S1PxLoh2JD4\u002BjlaAPjZovs/CcNbF7YNcQd\u002BeisWHZHXhczgm5U\u002BWTAucYW23n6rQVpssMJNMQHaS2IoIvN3VjY8MrbZvLAcOnPynHSrMRhp7eWmeDTI/kVn9tmYBEazYEUU0HilOP4Q==",
+  "verify": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAymkjdYxmgj09B9VXfZ28moNoniXxqqiyz8JlhzeOkY\u002BFaTs9Uyt/gZFOx/3eMSMBRUeRooqyGrraEcnVGhqeUOsSvygZo/h1RzYb82eOWr5w6ssY/Ij7SDXhqGkPFf9lSK2OmlbFewIC/Dh631cNxlruRGaxYtkkD5IjDfXfgRKyyezrYx64cAKBURB34e\u002BjVbbh67W3OcZiQQFjkPydFIfMk6BxCe9OO5V0tl/0F0sAc0ysD/wtaA1lt3fMJbQqJgXt0sqeucCV9RAifw65pom4aO8Hi/WfnGiRz9/IZIrD7aLerYS1fpBY7nYFxeivENwwxWgULI99ZOTIbxQ8DQIDAQAB"
+}

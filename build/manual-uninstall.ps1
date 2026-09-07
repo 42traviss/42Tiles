@@ -1,33 +1,41 @@
-# AutotileFill - manual uninstall from GameMaker LTS 2026, for people who
-# installed via manual-install.ps1 instead of GMPM.
+# 42Tiles - manual uninstall from GameMaker LTS 2026.
 # Run: powershell -ExecutionPolicy Bypass -File manual-uninstall.ps1
 
 $ErrorActionPreference = "Stop"
 
-$pluginName   = "AutotileFill"
-$author       = "Piotr"
+$pluginName   = "42Tiles"
+$legacyName   = "AutotileFill"
+$author       = "traviss42"
 $pluginsRoot  = "C:\ProgramData\GameMakerStudio2-LTS2026\Plugins"
-$targetDir    = Join-Path $pluginsRoot $pluginName
 $manifestPath = Join-Path $pluginsRoot "plugins.json"
 
 Write-Host "=== Uninstalling $pluginName ===" -ForegroundColor Cyan
 
-# 1. Remove the plugin folder
-if (Test-Path $targetDir) {
-    Remove-Item -Recurse -Force $targetDir
-    Write-Host "Removed $targetDir" -ForegroundColor Green
-} else {
-    Write-Host "Folder $targetDir does not exist - skipping." -ForegroundColor Yellow
+$gmProcess = Get-Process -Name "GameMaker-LTS2026","GameMaker" -ErrorAction SilentlyContinue
+if ($gmProcess) {
+    Write-Host "ERROR: GameMaker is running. Close it and run uninstall again." -ForegroundColor Red
+    exit 1
+}
+
+# 1. Remove the plugin folder plus leftover AutotileFill
+foreach ($name in @($pluginName, $legacyName)) {
+    $dir = Join-Path $pluginsRoot $name
+    if (Test-Path $dir) {
+        Remove-Item -Recurse -Force $dir
+        Write-Host "Removed $dir" -ForegroundColor Green
+    }
 }
 
 # 2. Remove entry from plugins.json
 if (Test-Path $manifestPath) {
-    # GMPM (GameMaker's package manager) writes plugins.json with trailing
-    # commas (same JSON5-ish style as .yy/.yyp), which ConvertFrom-Json
-    # rejects outright - strip them before parsing.
+    # plugins.json may use trailing commas (same JSON5-ish style as .yy/.yyp),
+    # which ConvertFrom-Json rejects - strip them before parsing.
     $manifestRaw = (Get-Content $manifestPath -Raw) -replace ',(\s*[}\]])', '$1'
     $json = $manifestRaw | ConvertFrom-Json
-    $filtered = @($json.Plugins) | Where-Object { -not ($_.Name -eq $pluginName -and $_.Author -eq $author) }
+    $drop = @($pluginName, $legacyName)
+    $filtered = @($json.Plugins) | Where-Object {
+        -not ($drop -contains $_.Name -and $_.Author -eq $author)
+    }
     $json.Plugins = @($filtered)
     # ConvertTo-Json via the pipeline unwraps a single-element (or empty)
     # array into a bare object/nothing, corrupting plugins.json - pass
