@@ -6,8 +6,6 @@ Works with existing tilesets and tile layers.
 
 Currently tested only on Windows (LTS 2026).
 
-Source (not required to install): [42Tiles-dev](https://github.com/42piotrnycz/42Tiles-dev).
-
 ## Features
 
 - **Auto-Assign** - fill a native 47-tile (blob) or 16-tile (cardinal) set from one start tile. Wrap width and **Skip first** sit under Auto Tile Templates. Wrap and Skip first are remembered per tileset.
