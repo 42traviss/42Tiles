@@ -35,15 +35,13 @@ Currently tested only on Windows (LTS 2026).
 
 <img width="339" height="460" alt="Groups & Rules button in the Auto Tiling library" src="https://github.com/user-attachments/assets/45ceadc1-f937-484c-aa7c-bf96bb6c4135" />
 
-<!-- screenshot: groups-and-rules-window -->
-_Screenshot: Groups & Rules — Select | Rules | Tile Groups | Tile List._
+<img width="1539" height="775" alt="obraz" src="https://github.com/user-attachments/assets/b66d4531-401f-451a-a905-0711a800677a" />
 
 2. **Select**
    - Pick a tileset from the **Tilesets** list (icon is the first tile with graphics).
    - Pick an autotile library element. Rows show that set’s first non-empty tile.
 
-<!-- screenshot: select-column -->
-_Screenshot: Select column (tilesets picker and autotile library)._
+<img width="288" height="748" alt="obraz" src="https://github.com/user-attachments/assets/1bf177af-15dc-4d7d-834d-720b97ef8cc6" />
 
 3. **Rules**
    - **Add** an Overload rule. **Show Guide Overlay** puts each set tile beside that slot’s guide cell.
@@ -51,8 +49,7 @@ _Screenshot: Select column (tilesets picker and autotile library)._
    - Name the rule in the box; slot assignments save as you click.
    - **Remove** deletes the selected rule.
 
-<!-- screenshot: rules-column -->
-_Screenshot: Rules column with Show Guide Overlay._
+<img width="274" height="702" alt="obraz" src="https://github.com/user-attachments/assets/174c12bd-aa38-4379-82f6-1628acf5c9cc" />
 
 4. **Tile Groups**
    - **Add group**, name it, mark **Is Local** if it should exist only for the selected autotile library element.
@@ -61,8 +58,7 @@ _Screenshot: Rules column with Show Guide Overlay._
    - **Paste** inserts copies into this tileset (new ids, unique names).
    - **Copy to…** picks another tileset and pastes there. Tiles past the destination sheet are dropped.
 
-<!-- screenshot: tile-groups-column -->
-_Screenshot: Tile Groups column._
+<img width="277" height="699" alt="obraz" src="https://github.com/user-attachments/assets/c748bfd8-e742-4fed-a3ae-902b4723e132" />
 
 5. **Tile List**
    - Click tiles to add or remove them from the selected group. Shift+click adds every shown tile from the last click to this one.
@@ -72,8 +68,7 @@ _Screenshot: Tile Groups column._
    - **Highlight** / **Highlight current autotile library element** draw a red plate behind matching tiles.
    - **Refresh** reloads thumbs after you edit the tileset image. **Save** writes sidecars and `__42TilesData`.
 
-<!-- screenshot: tile-list-column -->
-_Screenshot: Tile List with highlight._
+<img width="676" height="701" alt="obraz" src="https://github.com/user-attachments/assets/f418e721-3b6a-4502-9cce-026d3ef214c7" />
 
 A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No group on a slot means that slot keeps the set’s own tile.
 
@@ -89,10 +84,7 @@ A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No grou
 
 3. Paint or erase. Brush size matches the Tiles panel. Hover shows a preview of the stamp. Ctrl+Z undoes a Rules stroke.
 
-<img width="812" height="620" alt="Rules paint with hover preview" src="https://github.com/user-attachments/assets/99ac7199-02db-48da-a0c5-2cf335ec7b49" />
-
-<!-- screenshot: rules-paint-dock -->
-_Screenshot: Auto Tile with Rules dock on the room bar._
+<img width="370" height="77" alt="obraz" src="https://github.com/user-attachments/assets/0e5cfdc7-7158-4c3c-a71e-3a8be3abbf52" />
 
 ### Groups in GML
 
@@ -124,8 +116,7 @@ Missing tileset or group name returns `{}` / `[]` / `undefined`.
 
 Changing wrap, Skip first, or Hide empty in a tileset editor writes that tileset’s sidecar and does not change these project defaults.
 
-<!-- screenshot: preferences -->
-_Screenshot: File → Preferences → 42Tiles._
+<img width="809" height="883" alt="obraz" src="https://github.com/user-attachments/assets/dee4a60e-30a9-4910-b891-2bf44c4dd669" />
 
 ## Known issues
 
