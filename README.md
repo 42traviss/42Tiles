@@ -11,14 +11,14 @@ Source (not required to install): [42Tiles-dev](https://github.com/42piotrnycz/4
 ## Features
 
 - **Auto-Assign** — fill a native 47-tile (blob) or 16-tile (cardinal) set from one start tile. Wrap width and **Skip first** sit under Auto Tile Templates. Wrap and Skip first are remembered per tileset.
-- **Groups & Rules** — one window: **Rules** on the left, **Groups** on the right. Opens floating, or docked as a workspace tab (Preferences).
-- **Tileset groups** — named bags of *any* tileset tiles. Left-click add/remove, Shift+click a range, right-click priority 1 / 2 / 3. Copy, Paste, and Copy to… move groups between tilesets.
-- **Overload rules** — paint like GameMaker’s 47 or 16 autotile (from the set’s tile count). A slot can use a random tile from a group instead of the set tile.
-- **Room paint** — **Auto Tile with Rules** next to native Auto Tile. Same brush size as the Tiles panel, with a hover preview. Native Auto Tile is unchanged.
+- **Groups & Rules** — one window, four columns: **Select**, **Rules**, **Tile Groups**, and **Tile List**. Opens on the current Workspace (pans with it, can dock next to Workspaces), or floats (Preferences).
+- **Tileset groups** — named bags of *any* tileset tiles. Local to one autotile library element, or shared on the tileset. Left-click add/remove, Shift+click a range, right-click priority 1 / 2 / 3. Copy, Paste, and Copy to… move groups between tilesets.
+- **Overload rules** — paint like GameMaker’s 47 or 16 autotile (from the set’s tile count). A slot can use a random tile from a group instead of the set tile. Optional **Show Guide Overlay**.
+- **Room paint** — **Auto Tile with Rules** in its own dock next to the native pencil strip. Same brush size as the Tiles panel, with a hover preview. Native Auto Tile is unchanged.
 - **Library badges** — red **R** on autotile sets that have rules; green **G** on tilesets (and their sets) that have groups. Same badges in the room Auto Tile Library.
 - **Saved with the tileset** — groups, rules, wrap, Skip first, and Hide empty live in `Name.yyplugin` next to the tileset `.yy`. The native `.yy` is not edited.
 - **Preferences** — **File → Preferences → 42Tiles** or **Plugins → 42Tiles**. Per-project defaults in `Name.yyplugin` next to the `.yyp`. Enable does not need an IDE restart.
-- **Runtime groups** — generated script `__42Tiles` with `tile_group_get_all`, `tile_group_get_names`, and `tile_group_get`.
+- **Runtime groups** — `__42Tiles` (functions) and `__42TilesData` (`__42tiles_data()`). Groups **Save** rewrites only the data script.
 
 ## How to use
 
@@ -37,25 +37,47 @@ Source (not required to install): [42Tiles-dev](https://github.com/42piotrnycz/4
 
 <img width="339" height="460" alt="Groups & Rules button in the Auto Tiling library" src="https://github.com/user-attachments/assets/45ceadc1-f937-484c-aa7c-bf96bb6c4135" />
 
-2. **Right pane (Groups)**
-   - **Add group**, name it, click tiles to include them.
-   - Shift+click adds every shown tile from the last click to this one.
-   - Right-click a selected tile to cycle priority 1 / 2 / 3.
-   - **Hide empty tiles** hides blank cells. Remembered per tileset; Preferences is the default until you toggle it here.
+<!-- screenshot: groups-and-rules-window -->
+_Screenshot: Groups & Rules — Select | Rules | Tile Groups | Tile List._
+
+2. **Select**
+   - Pick a tileset from the **Tilesets** list (icon is the first tile with graphics).
+   - Pick an autotile library element. Rows show that set’s first non-empty tile.
+
+<!-- screenshot: select-column -->
+_Screenshot: Select column (tilesets picker and autotile library)._
+
+3. **Rules**
+   - **Add** an Overload rule. **Show Guide Overlay** puts each set tile beside that slot’s guide cell.
+   - For each autotile slot, click to cycle “set tile” → next group.
+   - Name the rule in the box; slot assignments save as you click.
+   - **Remove** deletes the selected rule.
+
+<!-- screenshot: rules-column -->
+_Screenshot: Rules column with Show Guide Overlay._
+
+4. **Tile Groups**
+   - **Add group**, name it, mark **Is Local** if it should exist only for the selected autotile library element.
+   - **Show only local** filters the list.
    - **Copy** copies the selected group. Click the selected group again to clear the selection, then Copy copies all groups.
    - **Paste** inserts copies into this tileset (new ids, unique names).
    - **Copy to…** picks another tileset and pastes there. Tiles past the destination sheet are dropped.
-   - **Refresh** reloads thumbs after you edit the tileset image.
 
-3. **Left pane (Rules)**
-   - **Add** an Overload rule.
-   - For each autotile slot, click to cycle “set tile” → next group.
-   - **Apply** saves the name; slot assignments save as you click.
-   - **Remove** deletes the selected rule.
+<!-- screenshot: tile-groups-column -->
+_Screenshot: Tile Groups column._
+
+5. **Tile List**
+   - Click tiles to add or remove them from the selected group. Shift+click adds every shown tile from the last click to this one.
+   - Right-click a selected tile to cycle priority 1 / 2 / 3.
+   - **Hide empty tiles** hides fully empty sprite rows (columns stay aligned when **Keep tileset order** is on).
+   - **Keep tileset order** (default on) lists tiles by index; off puts the selected group’s tiles first.
+   - **Highlight** / **Highlight current autotile library element** draw a red plate behind matching tiles.
+   - **Refresh** reloads thumbs after you edit the tileset image. **Save** writes sidecars and `__42TilesData`.
+
+<!-- screenshot: tile-list-column -->
+_Screenshot: Tile List with highlight._
 
 A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No group on a slot means that slot keeps the set’s own tile.
-
-<img width="1490" height="725" alt="Groups & Rules window" src="https://github.com/user-attachments/assets/59a6d188-c587-4cb5-868d-c65a7a06cbe4" />
 
 ### Paint in a room
 
@@ -63,21 +85,24 @@ A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No grou
 
 <img width="407" height="453" alt="Red R badge on an autotile set with rules" src="https://github.com/user-attachments/assets/c9734580-be87-4c28-a0c5-2cf335ec7b49" />
 
-2. Click **Auto Tile with Rules** in the tile tools (next to native Auto Tile). Choosing a native tool exits Rules.
+2. Click **Auto Tile with Rules** on the far right of the room tile tools (its own dock, next to the native pencil strip). The button is available only when a tile layer is selected. Choosing a native tool exits Rules.
 
 <img width="740" height="247" alt="Auto Tile with Rules tool" src="https://github.com/user-attachments/assets/16abe60f-f77b-4385-917a-92f8243fb23f" />
 
-3. Paint or erase. Brush size matches the Tiles panel. Hover shows a preview of the stamp.
+3. Paint or erase. Brush size matches the Tiles panel. Hover shows a preview of the stamp. Ctrl+Z undoes a Rules stroke.
 
 <img width="812" height="620" alt="Rules paint with hover preview" src="https://github.com/user-attachments/assets/99ac7199-02db-48da-a0c5-2cf335ec7b49" />
 
+<!-- screenshot: rules-paint-dock -->
+_Screenshot: Auto Tile with Rules dock on the room bar._
+
 ### Groups in GML
 
-42Tiles adds (and rewrites) a script named `__42Tiles`. Do not edit it. After you change groups, save the project or keep the Groups window open; the script updates automatically.
+42Tiles adds `__42Tiles` (runtime functions) and `__42TilesData` (`__42tiles_data()`). Do not edit them. `__42Tiles` is created if it is missing. After you change groups, use Groups **Save** or save the project — that rewrites `__42TilesData` only.
 
 ```gml
 var _all = tile_group_get_all(ts_ground);
-// _all[$ "grass"].tiles / .priorities
+// _all[$ "grass"].tiles / .priorities / .local
 var _names = tile_group_get_names(ts_ground);
 var _group = tile_group_get(ts_ground, "grass");
 // _group.tiles        — tile indices in the group
@@ -96,11 +121,17 @@ Missing tileset or group name returns `{}` / `[]` / `undefined`.
 | **Default wrap width** | Auto-Assign wrap on a tileset that has no wrap saved yet. |
 | **Hide empty tiles by default** | New Groups & Rules windows, until you change it for that tileset. |
 | **Skip first by default** | New Auto-Assign bars, until you change it for that tileset. |
-| **Open Groups & Rules docked** | Workspace tab when on, floating window when off. Applies the next time you open the window. |
+| **Open Groups & Rules on the workspace** | On: window on the current Workspace (pans, can dock next to Workspaces). Off: floats. Applies the next time you open the window. |
+| **Select / Rules / Tile Groups / Tile List** | Opening widths for the four Groups & Rules columns (defaults 200 / 200 / 200 / 520). |
 
 Changing wrap, Skip first, or Hide empty in a tileset editor writes that tileset’s sidecar and does not change these project defaults.
 
-<img width="631" height="415" alt="File → Preferences → 42Tiles" src="https://github.com/user-attachments/assets/a61cc25c-0258-4efa-8de8-e50326e87bb1" />
+<!-- screenshot: preferences -->
+_Screenshot: File → Preferences → 42Tiles._
+
+## Known issues
+
+- **Auto Tile with Rules** does not appear in File → Preferences → Redefine Keys. The default **Q** shortcut does not select the tool. Use the room tile-tool button instead.
 
 ## Install
 
