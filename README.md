@@ -6,19 +6,17 @@ Works with existing tilesets and tile layers.
 
 Currently tested only on Windows (LTS 2026).
 
-Source (not required to install): [42Tiles-dev](https://github.com/42piotrnycz/42Tiles-dev).
-
 ## Features
 
-- **Auto-Assign** — fill a native 47-tile (blob) or 16-tile (cardinal) set from one start tile. Wrap width and **Skip first** sit under Auto Tile Templates. Wrap and Skip first are remembered per tileset.
-- **Groups & Rules** — one window, four columns: **Select**, **Rules**, **Tile Groups**, and **Tile List**. Opens on the current Workspace (pans with it, can dock next to Workspaces), or floats (Preferences).
-- **Tileset groups** — named bags of *any* tileset tiles. Local to one autotile library element, or shared on the tileset. Left-click add/remove, Shift+click a range, right-click priority 1 / 2 / 3. Copy, Paste, and Copy to… move groups between tilesets.
-- **Overload rules** — paint like GameMaker’s 47 or 16 autotile (from the set’s tile count). A slot can use a random tile from a group instead of the set tile. Optional **Show Guide Overlay**.
-- **Room paint** — **Auto Tile with Rules** in its own dock next to the native pencil strip. Same brush size as the Tiles panel, with a hover preview. Native Auto Tile is unchanged.
-- **Library badges** — red **R** on autotile sets that have rules; green **G** on tilesets (and their sets) that have groups. Same badges in the room Auto Tile Library.
-- **Saved with the tileset** — groups, rules, wrap, Skip first, and Hide empty live in `Name.yyplugin` next to the tileset `.yy`. The native `.yy` is not edited.
-- **Preferences** — **File → Preferences → 42Tiles** or **Plugins → 42Tiles**. Per-project defaults in `Name.yyplugin` next to the `.yyp`. Enable does not need an IDE restart.
-- **Runtime groups** — `__42Tiles` (functions) and `__42TilesData` (`__42tiles_data()`). Groups **Save** rewrites only the data script.
+- **Auto-Assign** - fill a native 47-tile (blob) or 16-tile (cardinal) set from one start tile. Wrap width and **Skip first** sit under Auto Tile Templates. Wrap and Skip first are remembered per tileset.
+- **Groups & Rules** - one window, four columns: **Select**, **Rules**, **Tile Groups**, and **Tile List**. Opens on the current Workspace (pans with it, can dock next to Workspaces), or floats (Preferences).
+- **Tileset groups** - named bags of *any* tileset tiles. Local to one autotile library element, or shared on the tileset. Left-click add/remove, Shift+click a range, right-click priority 1 / 2 / 3. Copy, Paste, and Copy to… move groups between tilesets.
+- **Overload rules** - paint like GameMaker’s 47 or 16 autotile (from the set’s tile count). A slot can use a random tile from a group instead of the set tile. Optional **Show Guide Overlay**.
+- **Room paint** - **Auto Tile with Rules** in its own dock next to the native pencil strip. Same brush size as the Tiles panel, with a hover preview. Native Auto Tile is unchanged.
+- **Library badges** - red **R** on autotile sets that have rules; green **G** on tilesets (and their sets) that have groups. Same badges in the room Auto Tile Library.
+- **Saved with the tileset** - groups, rules, wrap, Skip first, and Hide empty live in `Name.yyplugin` next to the tileset `.yy`. The native `.yy` is not edited.
+- **Preferences** - **File → Preferences → 42Tiles** or **Plugins → 42Tiles**. Per-project defaults in `Name.yyplugin` next to the `.yyp`. Enable does not need an IDE restart.
+- **Runtime groups** - `__42Tiles` (functions) and `__42TilesData` (`__42tiles_data()`). Groups **Save** rewrites only the data script.
 
 ## How to use
 
@@ -83,7 +81,7 @@ A 47-tile set paints as blob autotile; a 16-tile set paints as cardinal. No grou
 
 1. Open a room, select a tile layer, and pick an autotile set that has rules (red **R**). Tilesets with groups show a green **G**.
 
-<img width="407" height="453" alt="Red R badge on an autotile set with rules" src="https://github.com/user-attachments/assets/c9734580-be87-4c28-a0c5-2cf335ec7b49" />
+<img width="315" height="245" alt="obraz" src="https://github.com/user-attachments/assets/eaad783b-58ca-45bb-96cd-4ca8cd770675" />
 
 2. Click **Auto Tile with Rules** on the far right of the room tile tools (its own dock, next to the native pencil strip). The button is available only when a tile layer is selected. Choosing a native tool exits Rules.
 
@@ -105,8 +103,8 @@ var _all = tile_group_get_all(ts_ground);
 // _all[$ "grass"].tiles / .priorities / .local
 var _names = tile_group_get_names(ts_ground);
 var _group = tile_group_get(ts_ground, "grass");
-// _group.tiles        — tile indices in the group
-// _group.priorities   — 1 often / 2 medium / 3 rare, parallel to tiles
+// _group.tiles        - tile indices in the group
+// _group.priorities   - 1 often / 2 medium / 3 rare, parallel to tiles
 ```
 
 Missing tileset or group name returns `{}` / `[]` / `undefined`.
@@ -141,7 +139,7 @@ GM on it's own!
 
 Requires [GameMaker LTS 2026](https://gamemaker.io/).
 
-1. Download this repository (**Code → Download ZIP**) or a [release](https://github.com/42piotrnycz/42Tiles/releases).
+1. Download this repository (**Code → Download ZIP**) or a [release](https://github.com/42traviss/42Tiles/releases).
 2. Close GameMaker.
 3. Run `build\manual-install.ps1`:
 
@@ -165,7 +163,7 @@ This plugin was created with the help of AI.
 There is currently no official pipeline to create GameMaker plugins, so it can (and probably will) break with major IDE updates.
 Nonetheless, it's a powerful tool, and progress made with it should still carry over, even after the plugin breaks/is uninstalled.
 
-Not affiliated with, endorsed by, or maintained by YoYo Games. Report bugs on [this repository’s issues](https://github.com/42piotrnycz/42Tiles/issues), never to YoYo Games.
+Not affiliated with, endorsed by, or maintained by YoYo Games. Report bugs on [this repository’s issues](https://github.com/42traviss/42Tiles/issues), never to YoYo Games.
 
 ## License
 
