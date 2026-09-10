@@ -22,6 +22,7 @@ jobs:
           mkdir -p package
           cp build/42Tiles.dll package/
           cp build/42Tiles.gmplugin package/
+          cp main_icon.png package/
 
       - name: Generate package.json
         run: |
@@ -41,7 +42,8 @@ jobs:
             },
             "files": [
               "42Tiles.dll",
-              "42Tiles.gmplugin"
+              "42Tiles.gmplugin",
+              "main_icon.png"
             ]
           }
           EOF
