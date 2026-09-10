@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.2.2 - 2026-09-10
+
+### Added
+
+- Tile List **Filters** menu (Highlight, Hide empty tiles, Keep tileset order) instead of three header checkboxes.
+- Groups & Rules window icon on the title bar.
+
+### Changed
+
+- Plugin / package description is **Tile groups, extended tileset painting & management.**
+- Auto-Assign, wrap-width, and Skip first sit in one left-aligned row under Auto Tile Templates.
+
+### Bug fixes
+
+- Auto-Assign, wrap-width, and Skip first only appeared on the first opened Auto Tiling window.
+
+### Known issues
+
+- **Auto Tile with Rules** does not appear in File → Preferences → Redefine Keys. The default **Q** shortcut does not select the tool. Use the room tile-tool button instead.
+
 ## v0.2.1 - 2026-09-09
 
 ### Added

@@ -1,7 +1,7 @@
 <img width="975" height="255" alt="obraz" src="https://github.com/user-attachments/assets/b27fe496-c16a-40df-acc9-028fe7125764" />
 
 GameMaker **LTS 2026** IDE plugin (Windows).
-An extension of the native autotile tools: tile groups, overload rules, faster autotile-set fill, and room paint that can pick variants from those groups.
+Tile groups, extended tileset painting & management.
 Works with existing tilesets and tile layers.
 
 Currently tested only on Windows (LTS 2026).

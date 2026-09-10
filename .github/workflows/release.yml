@@ -29,14 +29,14 @@ jobs:
           {
             "name": "@42traviss/42tiles",
             "version": "${{ steps.version.outputs.version }}",
-            "description": "Fill 47- or 16-tile autotile sets from one click, then paint with per-slot tile groups.",
+            "description": "Tile groups, extended tileset painting & management.",
             "keywords": ["gamemaker", "autotile", "plugin", "lts"],
             "author": "traviss42",
             "license": "MIT",
             "gm": {
               "destination": "42traviss/42tiles",
               "displayName": "42Tiles",
-              "shortDescription": "Autotile groups, overload rules, Auto-Assign, and room paint with variants.",
+              "shortDescription": "Tile groups, extended tileset painting & management.",
               "notifyOfUpdates": true
             },
             "files": [

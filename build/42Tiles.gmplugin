@@ -1,29 +1,29 @@
 {
   "name": "42Tiles",
-  "bundle_version": "0.2.1",
-  "bundle_description": "Fill 47- or 16-tile autotile sets from one click, then paint with per-slot tile groups.",
+  "bundle_version": "0.2.2",
+  "bundle_description": "Tile groups, extended tileset painting \u0026 management.",
   "required": false,
   "feature_flag": null,
   "plugins": [
     {
       "plugin_name": "42Tiles",
       "localised_name": "42Tiles",
-      "plugin_version": "0.2.1",
+      "plugin_version": "0.2.2",
       "type": "System",
       "plugin_data": null,
-      "description": "Fill 47- or 16-tile autotile sets from one click, then paint with per-slot tile groups.",
+      "description": "Tile groups, extended tileset painting \u0026 management.",
       "required_assemblies": [
         {
           "assembly_name": "42Tiles",
-          "version": "0.2.1",
+          "version": "0.2.2",
           "path": "42Tiles.dll",
-          "checksum": "TXj1oeRpeJe2S9snE0vw9AjjY/6wpQNH0zDHaslZ1iI="
+          "checksum": "hV2b/YE6vVE4rgiHvz3kgkZUj0tLknYRi3dWqUCZQzM="
         }
       ],
       "dependencies": []
     }
   ],
   "author": "traviss42",
-  "signature": "YefoGxs7Vp\u002BeeYGfvvR6Pam9RBoE8u\u002BjEGnxzw6SrKIkC7m5CPB7sCGj7ct9iUqK7bAG4vGgkaBRxHjzbqnsHahl90MF/k5EFUi3nL244E7k81NhFggpwYGLfP7nDgMOPeu5VvVBtwnnJPvEmX8Q3Wb8O2x6T2eBCLg39EJSBQ9YGATi5oGNFkU1sy5475OzWyvCuY79Jy3ccy61c3dnzzGrHJo3EcJV2Pse1QXpv9gZ2udAgrKzbJd7IVE8PNWycovmdV2TT53p5TghRsVwI9GRl8jzhQx50Ar6FlXjQfs5PgmR0hETtAhclLGb8bdA5zeMy2gSyI7lDfdaBZP1Uw==",
-  "verify": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1COGg1adzbWgLKlzT9FFI2HXD416C7zmVEyyU6HcvbrKm57TpOXFnioTzgjxZm4xW6JK2\u002B8KW7opSZLVLoDaanmpvz\u002BlTVYwGalp4JSTiB4CE7qIHy1cNUjtKnD/CCf\u002BfrmmKWYuDipK1qAawWLSKHKv1NbiDWp9fuPtNEhE2RzJ1ouex4yW\u002BAH/Gmptw1YA7667ZuOpq7BZKq\u002BYXyOdO44cnJ2GRSyIEpDww2B7UbGmBYVBDlp2K/I73NUaTBSSgFceyrocRq8zGk8d/sW9PsdGNG1pAZL\u002BEntjLKCwSaZUIW7JRnCiQoFI9fBnYXNIrT4PXCYW7D3AivfNI0zzCQIDAQAB"
+  "signature": "h1lmsnXeolihQE3fnWq1T8xBgnYQ6ufXlHQ6EIOSScNlQRfyQoT31tPZ3Md2gRTKp9Gi/edCQBEHnUoisWGu5ZXEU\u002BY1WLevFihYGdOPztPAteI/NE2DUfAIAsfX7IKFTEywgZ9xiH\u002BD\u002Bb6PUaSM\u002Birl\u002BKL8qcNS8xhJ4T9k9X7ONc1kIxyeSkXhrI2EQgY9d50J9uxSisljXX7Ocuasrbg5uINDbIMoqPyRIF\u002B2R1u5BFOlOKL2wWwjP\u002BKwlQuQCmEERrAkWTDhXbEEGyFr2ScgVOIcSirt0tkiWRwEcSCrPNqZwHYRKVzfPGQ/ntSaP2QOqWTDvqLo/nrbDM\u002B2cg==",
+  "verify": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0RYlPpg0Odz3TuMi2HCrbBhhgtVErXRFvhC8\u002BXYJSf8vVHQiEpcPcdeRfVrjTGEhMGBTOpYnWZhzeHslMXZLwFVivLkHob3yldqw5/s7s/egoct99NbNOF8C1vomKxjboA/M25nLHOdqx1MItlVITTRyqJNv7esFBExyajzF\u002BKqaGA0SG\u002Bts38h52gMhe4tB4yHAUpRftmv1Mdhf1/I4Ko0jbjyJdWqolF6fC\u002BUnJTfZaSyTR5WPnoEWejYC7bOMi0VqJppEmkQEHu6hRd5c3WoIiYZHaIkD\u002By5tD6jrFcP65WZCLRMAqy9L9wegNXWKgNLO2JlLoA\u002BZR\u002BHoXw2oKQIDAQAB"
 }
