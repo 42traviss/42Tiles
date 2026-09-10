@@ -1,0 +1,67 @@
+name: Build and release plugin
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Stage plugin files
+        run: |
+          mkdir -p package
+          cp build/42Tiles.dll package/
+          cp build/42Tiles.gmplugin package/
+
+      - name: Generate package.json
+        run: |
+          cat > package/package.json <<EOF
+          {
+            "name": "@42traviss/42tiles",
+            "version": "${{ steps.version.outputs.version }}",
+            "description": "Fill 47- or 16-tile autotile sets from one click, then paint with per-slot tile groups.",
+            "keywords": ["gamemaker", "autotile", "plugin", "lts"],
+            "author": "traviss42",
+            "license": "MIT",
+            "gm": {
+              "destination": "42traviss/42tiles",
+              "displayName": "42Tiles",
+              "shortDescription": "Autotile groups, overload rules, Auto-Assign, and room paint with variants.",
+              "notifyOfUpdates": true
+            },
+            "files": [
+              "42Tiles.dll",
+              "42Tiles.gmplugin"
+            ]
+          }
+          EOF
+
+      - name: Build .tgz for GMPM
+        run: tar -czf 42Tiles-${{ steps.version.outputs.version }}.tgz -C package .
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            42Tiles-${{ steps.version.outputs.version }}.tgz
+
+      - name: Trigger Server Sync
+        run: |
+          payload='{"gh_user":"${{ github.repository_owner }}","gh_repo":"${{ github.event.repository.name }}"}'
+          curl -X POST "http://gmpm.gmclan.org/webhook.php" \
+            -H "Content-Type: application/json" \
+            -H "X-Hub-Signature-256: sha256=$(echo -n "$payload" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | sed 's/^.* //')" \
+            -d "$payload"
+        env:
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
